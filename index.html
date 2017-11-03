@@ -13,7 +13,7 @@
   <header>
     <div></div>
     <h1>Trivia Trends</h1>
-    <button><span>+</span> Add Question</button>
+    <button  ng-click="openModal()"><span>+</span> Add Question</button>
   </header>
   <article>
     <nav>
@@ -31,7 +31,7 @@
 
       <h3>{{question.question}}</h3>
       <div ><!-- Difficulty --></div>
-      <div class="gear" >
+      <div class="gear"  ng-click="openModal(question)">
         <img src="/styles/assets/gear.svg" alt="">
       </div>
       <ul>
@@ -45,10 +45,11 @@
 
   </article>
 
-  <div class="modal">
+  <div class="modal" ng-s>
     <form>
       <h4 class="close">X</h4>
-      <span>Question</span><input type="text" ng-model="<!-- Question -->">
+      <span>Question</span><input type="text" >
+      <!-- ng-model="" -->
       <span>Animal it's about</span><input type="text" ng-model="<!-- Animal -->">
       <span>Difficulty</span>
       <div class="range">
