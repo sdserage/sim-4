@@ -11,10 +11,9 @@ angular.module("triviaApp").controller("questionCtrl", function ($scope, questio
         $scope.modalOpen = true;
         console.log($scope.modalOpen)
         if (question) {
-            questionSrvc.getQuestion(question._id).then(question => {
-                $scope.currentQuestion = question;
-            })
-        }
+     $scope.currentQuestion = question;
+     console.log($scope.currentQuestion)
+            }
     }
 
     $scope.closeModal = function () {
