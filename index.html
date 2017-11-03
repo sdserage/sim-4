@@ -1,37 +1,85 @@
 <!DOCTYPE html>
 <html ng-app='triviaApp'>
-  <head>
-    <title>Trivia Trends</title>
 
-  </head>
-  <body>
-    <header class='header'>
-      <div class='title'>Trivia Trends</div><button class='add-question'>+ Add Question</button>
-      <!-- META INFO -->
-      <meta charset="UTF-8">
-      <meta name="description" content="Simple trivia app">
-      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>Trivia Trends</title>
+  <link rel="shortcut icon" href="/styles/assets/crownFavicon.png">
+</head>
 
-      <!--RESET FILE -->
-      <link rel="stylesheet" href="reset.css">
-
-      <!--MAIN FILE-->
-      <link rel="stylesheet" href="index.css">
-    </header>
-    <ul class='filters'>
-        <li>All Questions</li>
-        <li>Easy</li>
-        <li>Medium</li>
-        <li>Hard</li>
-        <li>Search by Animal</li>
-    </ul>
-    <input class='search-bar' type='text'/>
-    <div class='questions-container'>
+<body>
+  <header>
+    <div></div>
+    <h1>Trivia Trends</h1>
+    <button><span>+</span> Add Question</button>
+  </header>
+  <article>
+    <nav>
+      <a>All Questions</a>
+      <a>Easy</a>
+      <a>Medium</a>
+      <a>Hard</a>
+      <a>Search by Animal</a>
+    </nav>
+    <div class="search">
+      <input type="text" placeholder="Animal to search by">
     </div>
 
-    <!--Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-    <script src='app/app.js'></script>
-    <script src='app/question.service.js'></script>
-  </body>
-</html>
+    <!-- Questions go here -->
+
+  </article>
+
+  <div class="modal">
+    <form>
+      <h4 class="close">X</h4>
+      <span>Question</span><input type="text" ng-model="<!-- Question -->">
+      <span>Animal it's about</span><input type="text" ng-model="<!-- Animal -->">
+      <span>Difficulty</span>
+      <div class="range">
+        <input type="range" min="1" max="3" ng-model="<!-- Difficulty -->">
+
+        <h5>{{"newQuestion.difficulty"}}</h5>
+      </div>
+      <h4>Options</h4>
+      <div>
+        <input type="radio" ng-model="" value="1">
+        <input type="text" ng-model="">
+      </div>
+      <div>
+        <input type="radio" ng-model="" value="2">
+        <input type="text" ng-model="">
+      </div>
+      <div>
+        <input type="radio" ng-model="" value="3">
+        <input type="text" ng-model="">
+      </div>
+      <div>
+        <input type="radio" ng-model="" value="4">
+        <input type="text" ng-model="">
+      </div>
+
+      <!--Add question buttons-->
+      <div class="buttons">
+        <button class="green">Save Question</button>
+        <button>Cancel</button>
+      </div>
+
+      <!--Edit & Delete question buttons-->
+      <div class="buttons">
+        <button class="red">Delete Question</button>
+        <button class="green">Save Changes</button>
+        <button>Cancel</button>
+      </div>
+
+    </form>
+  </div>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js" charset="utf-8"></script>
+  <script src="app/app.js" charset="utf-8"></script>
+</body>
