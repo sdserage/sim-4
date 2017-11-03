@@ -18,6 +18,7 @@ angular.module("triviaApp").controller("questionCtrl", function ($scope, questio
     }
 
     $scope.closeModal = function () {
-        $scope.modelOpen = false;
+        $scope.modalOpen = false;
+        console.log($scope.modalOpen)
     }
 })
