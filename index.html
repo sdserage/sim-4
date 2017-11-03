@@ -29,13 +29,13 @@
     <img class="img1" src="http://pa1.narvii.com/6384/9baa0cb2f9e942295a4bc4d1705c36a21b56e8b7_hq.gif"/>
     <div class="question-wrapper" ng-repeat='question in questions'>
 
-<<<<<<< HEAD
+
       <h3></h3>
       <div ><!-- Difficulty --></div>
-=======
+
       <h3>{{question.question}}</h3>
       <div >{{question.difficulty}}</div>
->>>>>>> e59cae576e6e647eaff6cf79423bd2dc2a14e4a8
+
       <div class="gear"  ng-click="openModal(question)">
         <img src="/styles/assets/gear.svg" alt="">
       </div>
@@ -82,7 +82,7 @@
 
       <!--Add question buttons-->
       <div class="{{currentQuestion._id ? 'ng-hide' : 'buttons'}}">
-        <button class="green" ng-click='addQuestion(currentQuestion)'>Save Question</button>
+        <button class="green" ng-click='addQuestion(currentQuestion); closeModal()'>Save Question</button>
         <button ng-click='closeModal()'>Cancel</button>
       </div>
 
