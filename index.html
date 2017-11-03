@@ -59,30 +59,30 @@
       </div>
       <h4>Options</h4>
       <div>
-        <input type="radio" ng-model="" value="1">
+        <input type="radio" ng-model="currentQuestion.correct_answer" value="1">
         <input type="text" ng-model="currentQuestion.options['1']">
       </div>
       <div>
-        <input type="radio" ng-model="" value="2">
+        <input type="radio" ng-model="currentQuestion.correct_answer" value="2">
         <input type="text" ng-model="currentQuestion.options['2']">
       </div>
       <div>
-        <input type="radio" ng-model="" value="3">
+        <input type="radio" ng-model="currentQuestion.correct_answer" value="3">
         <input type="text" ng-model="currentQuestion.options['3']">
       </div>
       <div>
-        <input type="radio" ng-model="" value="4">
+        <input type="radio" ng-model="currentQuestion.correct_answer" value="4">
         <input type="text" ng-model="currentQuestion.options['4']">
       </div>
 
       <!--Add question buttons-->
-      <div class="buttons">
+      <div class="{{currentQuestion._id ? 'ng-hide' : 'buttons'}}">
         <button class="green">Save Question</button>
         <button>Cancel</button>
       </div>
 
       <!--Edit & Delete question buttons-->
-      <div class="buttons">
+      <div class="{{currentQuestion._id ? 'buttons' : 'ng-hide' }}">
         <button class="red" ng-click='deleteQuestion(currentQuestion._id); closeModal()'>Delete Question</button>
         <button class="green">Save Changes</button>
         <button>Cancel</button>
