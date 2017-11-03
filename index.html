@@ -77,15 +77,15 @@
 
       <!--Add question buttons-->
       <div class="{{currentQuestion._id ? 'ng-hide' : 'buttons'}}">
-        <button class="green">Save Question</button>
-        <button>Cancel</button>
+        <button class="green" ng-click='addQuestion(currentQuestion)'>Save Question</button>
+        <button ng-click='closeModal()'>Cancel</button>
       </div>
 
       <!--Edit & Delete question buttons-->
       <div class="{{currentQuestion._id ? 'buttons' : 'ng-hide' }}">
-        <button class="red" ng-click='deleteQuestion(currentQuestion._id); closeModal()'>Delete Question</button>
-        <button class="green">Save Changes</button>
-        <button>Cancel</button>
+        <button class="red" ng-click='deleteQuestion(currentQuestion.id); closeModal()'>Delete Question</button>
+        <button class="green" ng-click='editQuestion(currentQusetion); closeModal()'>Save Changes</button>
+        <button ng-click='closeModal()'>Cancel</button>
       </div>
 
     </form>
