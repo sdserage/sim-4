@@ -40,12 +40,12 @@
             <label><!-- Option text --></label>
         </li>
       </ul>
-{{modalOpen}}
+
     </div>
 
   </article>
-
-  <div class="modal" ng-show="modalOpen">
+  {{modalOpen}}
+  <div class="modal {{modalOpen ? '' : 'ng-hide'}}" ng-show="modalOpen">
     <form>
       <h4 class="close">X</h4>
       <span>Question</span><input type="text" >
