@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='triviaApp'>
+  <head>
+    <title>Trivia Trends</title>
+
+  </head>
+  <body>
+    <header class='header'>
+      <div class='title'>Trivia Trends</div><button class='add-question'>+ Add Question</button>
+      <!-- META INFO -->
+      <meta charset="UTF-8">
+      <meta name="description" content="Simple trivia app">
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+      <!--RESET FILE -->
+
+      <!--MAIN FILE-->
+      <link rel="stylesheet" href="index.css">
+    </header>
+    <ul class='filters'>
+        <li>All Questions</li>
+        <li>Easy</li>
+        <li>Medium</li>
+        <li>Hard</li>
+        <li>Search by Animal</li>
+    </ul>
+    <input class='search-bar' type='text'/>
+    <div class='questions-container'>
+    </div>
+
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script src='app/app.js'></script>
+    <script src='app/question.service.js'></script>
+  </body>
+</html>
