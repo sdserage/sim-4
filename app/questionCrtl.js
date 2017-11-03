@@ -1,6 +1,7 @@
 angular.module("triviaApp").controller("questionCtrl", function ($scope, questionSrvc) {
 
     $scope.modalOpen = false;
+    $scope.currentQuestion = {};
 
     questionSrvc.getQuestions().then(questions => {
         $scope.questions = questions;
@@ -15,6 +16,12 @@ angular.module("triviaApp").controller("questionCtrl", function ($scope, questio
         })
     }
 
+    // $scope.addQuestion = function()
+
+    $scope.editQuestion = function(currentQuestion) {
+        questionSrvc.editQuestion(currentQuestion)
+    }
+
     $scope.openModal = function (question) {
         $scope.modalOpen = true;
         if (question) {
@@ -25,4 +32,5 @@ angular.module("triviaApp").controller("questionCtrl", function ($scope, questio
     $scope.closeModal = function () {
         $scope.modalOpen = false;
     }
+
 })
