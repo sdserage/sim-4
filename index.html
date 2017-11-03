@@ -13,6 +13,7 @@
   <header>
     <div></div>
     <h1>Trivia Trends</h1>
+    <div class="hello">Hello</div>
     <button  ng-click="openModal()"><span>+</span> Add Question</button>
   </header>
   <article>
@@ -44,35 +45,35 @@
     </div>
 
   </article>
-  {{modalOpen}}
+
   <div class=" {{modalOpen ? 'modal' : 'modal ng-hide'}}" ng-show="modalOpen">
     <form>
       <h4 class="close" ng-click='closeModal()'>X</h4>
-      <span>Question</span><input type="text" >
+      <span>Question</span><input type="text" ng-model='currentQuestion.question'>
       <!-- ng-model="" -->
-      <span>Animal it's about</span><input type="text" ng-model="!-- Animal -->">
+      <span>Animal it's about</span><input type="text" ng-model="currentQuestion.animal">
       <span>Difficulty</span>
       <div class="range">
-        <input type="range" min="1" max="3" ng-model="!-- Difficulty -->">
+        <input type="range" min="1" max="3" ng-model="currentQuestion.difficulty">
 
-        <h5>{{"newQuestion.difficulty"}}</h5>
+        <h5>{{currentQuestion.difficulty}}</h5>
       </div>
       <h4>Options</h4>
       <div>
         <input type="radio" ng-model="" value="1">
-        <input type="text" ng-model="">
+        <input type="text" ng-model="currentQuestion.options['1']">
       </div>
       <div>
         <input type="radio" ng-model="" value="2">
-        <input type="text" ng-model="">
+        <input type="text" ng-model="currentQuestion.options['2']">
       </div>
       <div>
         <input type="radio" ng-model="" value="3">
-        <input type="text" ng-model="">
+        <input type="text" ng-model="currentQuestion.options['3']">
       </div>
       <div>
         <input type="radio" ng-model="" value="4">
-        <input type="text" ng-model="">
+        <input type="text" ng-model="currentQuestion.options['4']">
       </div>
 
       <!--Add question buttons-->
@@ -83,7 +84,7 @@
 
       <!--Edit & Delete question buttons-->
       <div class="buttons">
-        <button class="red">Delete Question</button>
+        <button class="red" ng-click='questionSrvc.deleteQuestion(currentQuestion._id), closeModal()'>Delete Question</button>
         <button class="green">Save Changes</button>
         <button>Cancel</button>
       </div>
