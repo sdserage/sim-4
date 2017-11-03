@@ -45,7 +45,7 @@
 
   </article>
   {{modalOpen}}
-  <div class="modal {{modalOpen ? '' : 'ng-hide'}}" ng-show="modalOpen">
+  <div class=" {{modalOpen ? 'modal' : 'modal ng-hide'}}" ng-show="modalOpen">
     <form>
       <h4 class="close" ng-click='closeModal()'>X</h4>
       <span>Question</span><input type="text" >
