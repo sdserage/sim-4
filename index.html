@@ -89,7 +89,7 @@
       <!--Edit & Delete question buttons-->
       <div class="{{currentQuestion._id ? 'buttons' : 'ng-hide' }}">
         <button class="red" ng-click='deleteQuestion(currentQuestion.id); closeModal()'>Delete Question</button>
-        <button class="green" ng-click='editQuestion(currentQusetion); closeModal()'>Save Changes</button>
+        <button class="green" ng-click='editQuestion(currentQuestion); closeModal()'>Save Changes</button>
         <button ng-click='closeModal()'>Cancel</button>
       </div>
 

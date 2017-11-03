@@ -21,8 +21,8 @@ angular.module("triviaApp").service('questionSrvc', function ($http) {
         })
     }
 
-    this.editQuestion = function (question) {
-            return $http.put("https://practiceapi.devmountain.com/api/trivia/questions/" + question._id, question).then(response => {
+    this.editQuestion = function (currentQuestion) {
+            return $http.put("https://practiceapi.devmountain.com/api/trivia/questions/" + currentQuestion._id, currentQuestion).then(response => {
                 return response.data
             }).catch(err => { console.log("error in delete", err) })
     }
